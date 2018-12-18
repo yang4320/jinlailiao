@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/room/room"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#333",
+    "navigationBarTitleText": "近来聊",
+    "navigationBarTextStyle": "white"
+  },
+  "usingComponents": {
+    "i-button": "../../vendor/iview/button/index",
+    "i-input": "../../vendor/iview/input/index",
+    "i-cell-group": "../../vendor/iview/cell-group/index",
+    "i-cell": "../../vendor/iview/cell/index",
+    "i-modal": "../../vendor/iview/modal/index",
+    "i-icon": "../../vendor/iview/icon/index",
+    "i-toast": "../../vendor/iview/toast/index",
+    "i-progress": "../../vendor/iview/progress/index"
+  }
+}

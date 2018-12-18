@@ -1,0 +1,21 @@
+<view class="root">
+    <i-button bind:click="toCreateNew" type="primary" size="default"><i-icon type="add" />创建</i-button>
+    <i-cell-group>
+        <view class="line-control" wx:for="{{rooms}}" wx:key="id">
+            <i-cell title="{{item.roomName}}（{{item.peopleCount}}）" is-link url="../room/room?roomId={{item.id}}&roomName={{item.roomName}}"></i-cell>
+        </view>
+    </i-cell-group>
+    <!--<i-button bind:click="toCreateNew" type="primary" size="default"><i-icon type="add" />创建</i-button>-->
+
+    <i-modal title="输入聊天主题" visible="{{ visible }}" bind:ok="createNew" bind:cancel="toCreateNew">
+        <input value="{{roomName}}" bindchange="changeInputContent" placeholder="聊点啥主题呢？" confirm-type="done" bindconfirm="createNew"></input>
+    </i-modal>
+
+    <i-toast id="toast" />
+
+    <i-modal title="请您授权" visible="{{ showPrivilege }}" show-ok="false" show-cancel="false">
+        <!--<view></view>-->
+        <i-button open-type="getUserInfo" bind:getuserinfo="onGotUserInfo" type="primary" size="default"><i-icon type="add" />授权"近来聊"</i-button>
+    </i-modal>
+</view>
+

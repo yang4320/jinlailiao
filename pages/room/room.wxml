@@ -1,0 +1,32 @@
+<view class="page-wrap">
+    <scroll-view class="chat-container" scroll-y scroll-into-view="{{lastMessageId}}" scroll-top="9999999999">
+        <view wx:for="{{messages}}" wx:for-item="message" wx:key="id" id="{{message.id}}" class="message {{message.type}}">
+            <view wx:if="{{message.type == 'speak'}}" class="user-message {{message.isMe ? 'me' : 'other'}}">
+
+                <button class="avatar-and-process" bindtap="setVoteOpenId" id="{{message.user.openId}}">
+                    <i-progress i-class="forbidden-process" percent="{{ message.user.forbiddenPercent }}" status="{{ message.user.forbiddenStatus }}" hide-info></i-progress>
+                    <image class="avatar" src="{{message.user.avatarUrl}}" mode="aspectFill"></image>
+                </button>
+                <view class="text">
+                    <view class="nickname">{{message.user.nickName}}（{{message.distance}}）</view>
+                    <view class="content">{{message.content}}</view>
+                </view>
+            </view>
+            <view wx:if="{{message.type == 'system'}}" class="system-message">
+                {{message.content}}
+            </view>
+        </view>
+    </scroll-view>
+    <view class="input-panel">
+        <button class="pic-icon"></button>
+        <input type="text" value="{{inputContent}}" bindchange="changeInputContent" confirm-type="done" focus="true" class="send-input"></input>
+        <button bindtap="sendMessage" class="send-btn" disabled="{{disabled}}">发送</button>
+        <!--<i-button bind:click="sendMessage" type="success" shape="circle" size="small">发送</i-button>-->
+    </view>
+
+    <i-modal title="投票禁言确认" visible="{{ visible }}" bind:ok="voteForbidden" bind:cancel="setVoteOpenId">
+        <view>我要投票禁言TA？</view>
+    </i-modal>
+
+    <i-toast id="toast" />
+</view>
