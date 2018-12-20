@@ -56,7 +56,8 @@ Page({
       forbiddenPercent: 100,
       forbiddenStatus: 'success',
       voteOpenId:'',
-      visible: false
+      visible: false,
+      hold: true
   },
 
   onLoad: function (options) { 
@@ -354,7 +355,9 @@ Page({
       })
 
       // this.pushMessage(createUserMessage(that.data.inputContent, who, who.openId === that.me.openId));
-      this.setData({ inputContent: '' });
+      this.setData({
+          inputContent: ''
+      });
     }
   },
 });

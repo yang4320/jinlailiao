@@ -30,6 +30,9 @@ Page({
       lastPage: false,
       showPrivilege: false,
         firstShow: true,//页面第一次加载
+        okButton: false,
+        cancelButton: false,
+        focus:false
   },
     getLocationAndMyNearbyRoom: function(){
       let that = this;
@@ -52,7 +55,10 @@ Page({
         //     this.setData({ showPrivilege: true });
         // }else{
             // getApp().globalData.session = e.detail.userInfo;
-            this.setData({ visible: !this.data.visible });
+            this.setData({
+                visible: !this.data.visible,
+                focus: !this.data.focus
+            });
         // }
     },
     // closeCreateNewModal: function(){

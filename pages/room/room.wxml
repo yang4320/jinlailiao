@@ -19,7 +19,7 @@
     </scroll-view>
     <view class="input-panel">
         <button class="pic-icon"></button>
-        <input type="text" value="{{inputContent}}" bindchange="changeInputContent" confirm-type="done" focus="true" class="send-input"></input>
+        <input type="text" value="{{inputContent}}" bindinput="changeInputContent" confirm-type="done" bindconfirm="sendMessage" confirm-hold="{{hold}}" class="send-input"></input>
         <button bindtap="sendMessage" class="send-btn" disabled="{{disabled}}">发送</button>
         <!--<i-button bind:click="sendMessage" type="success" shape="circle" size="small">发送</i-button>-->
     </view>
