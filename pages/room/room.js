@@ -107,7 +107,7 @@ Page({
   onShareAppMessage: function() {
       return {
           title: this.data.roomName,
-          imageUrl: 'https://file.iviewui.com/iview-weapp-logo.png'
+          imageUrl: 'http://thyrsi.com/t6/638/1545314169x2890191781.jpg'
       };
   },
 

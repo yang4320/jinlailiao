@@ -1,7 +1,7 @@
 {
-  "name": "qcloud-weapp-client-demo",
+  "name": "jinlailiao",
   "version": "2.0.0",
-  "description": "腾讯云微信小程序客户端 DEMO",
+  "description": "跟附件的人聊聊共同的话题",
   "main": "app.js",
   "keywords": [],
   "author": "CFETeam",
